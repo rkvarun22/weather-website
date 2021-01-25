@@ -1,24 +1,24 @@
-const path = require('path')
-const express = require('express')
-const hbs = require('hbs')
-const geocode = require('./utils/geocode')
-const forecast = require('./utils/forecast')
+const path = require('path');
+const express = require('express');
+const hbs = require('hbs');
+const geocode = require('./utils/geocode');
+const forecast = require('./utils/forecast');
 
-const app = express()
+const app = express();
 const port = process.env.PORT || 3000
 
 //Path for Express config
-const publicDirectoryPath = path.join(__dirname, '../public')
-const viewsPath = path.join(__dirname, '../templates/views')
-const partialsPath = path.join(__dirname, '../templates/partials')
+const publicDirectoryPath = path.join(__dirname, '../public');
+const viewsPath = path.join(__dirname, '../templates/views');
+const partialsPath = path.join(__dirname, '../templates/partials');
 
 //Setup habdlebars engine and views location
-app.set('view engine', 'hbs')
-app.set('views', viewsPath)
-hbs.registerPartials(partialsPath)
+app.set('view engine', 'hbs');
+app.set('views', viewsPath);
+hbs.registerPartials(partialsPath);
 
 //Set up static directory to serve 
-app.use(express.static(publicDirectoryPath))
+app.use(express.static(publicDirectoryPath));
 
 //Home Page
 app.get('', (req, res) => {
@@ -26,7 +26,7 @@ app.get('', (req, res) => {
         title: 'Weather',
         name: 'RK varun'
     })
-})
+});
 
 //About Page
 app.get('/about', (req, res) => {
@@ -34,7 +34,7 @@ app.get('/about', (req, res) => {
         title: 'About Weather',
         name: 'RK Varun'
     })
-})
+});
 
 //help page
 app.get('/help', (req, res) => {
@@ -42,7 +42,7 @@ app.get('/help', (req, res) => {
         title: 'Contact us',
         name: 'RK Varun'
     })
-})
+});
 
 //query input
 app.get('/weather', (req, res) => {
@@ -72,7 +72,7 @@ app.get('/weather', (req, res) => {
         })
 
     })
-})
+});
 
 //page 404 error
 app.get('*', (req, res) => {
@@ -81,9 +81,9 @@ app.get('*', (req, res) => {
         name: 'RK Varun',
         errorMessage: 'Page 404 not found'
     })
-})
+});
 
 //port setup
 app.listen(port, () => {
     console.log('Server is running...' +port)
-})
+});

@@ -1,4 +1,4 @@
-const request = require('request')
+const request = require('request');
 
 //WeatherStack for forecast
 const forecast = (latitude, longitude, callback) => {

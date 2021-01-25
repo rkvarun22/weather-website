@@ -1,11 +1,11 @@
-const weatherForm = document.querySelector('form')
-const search = document.querySelector('input')
-const messageOne = document.querySelector('#message-1')
-const messageTwo = document.querySelector('#message-2')
+const weatherForm = document.querySelector('form');
+const search = document.querySelector('input');
+const messageOne = document.querySelector('#message-1');
+const messageTwo = document.querySelector('#message-2');
 
 //adding event listener
 weatherForm.addEventListener('submit', (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     const location = search.value
 
@@ -23,4 +23,4 @@ weatherForm.addEventListener('submit', (e) => {
         }
     })
 })
-})
+});
