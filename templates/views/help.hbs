@@ -13,7 +13,25 @@
         <h1>{{>header}}</h1>
     
         <p>If you have any query, kindly connect with us</p>
-        <p>Mobile: +91-8826609437</p>
+        <div class="container">
+	<h3>Contact Form</h3>
+	<form action="#" name="contact_form">
+		<label for="first_name">First Name</label>
+		<input name="first_name" type="text" required placeholder="First Name"/>
+		<br>
+		<label for="last_name">Last Name</label>
+		<input name="last_name" type="text" required placeholder="Second Name"/>
+		<br>
+		<label for="email">Email</label>
+		<input name="email" type="email" required placeholder="yourname@gmail.com"/>
+		<br>
+		<label for="message">Message</label><br>
+		<textarea name="message" cols="30" rows="10" placeholder="Enter your message here ..."></textarea>
+		<div class="center">
+			<input type="submit" value="Submit">
+		</div>
+	</form>	
+</div>
     </div>
 
     <h1>{{>footer}}</h1>
